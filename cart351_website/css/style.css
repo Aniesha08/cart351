@@ -7,8 +7,6 @@ color: #59999e;}
 
 p, li {font-family: 'Barlow', sans-serif;}
 
-hr{width: 50%;}
-
 li{color: #717171;
 list-style-type: square;}
 
@@ -24,11 +22,17 @@ img{width:100%;}
 #header h1 {color: #ffffff;
 margin: 0;}
 
-#info{color: #717171;
+div.info{color: #717171;
 width:50%;
 margin: 0 auto;
 line-height: 24px;
-margin-top: 3em;}
+padding-top: 3em;
+padding-bottom: 3em;}
+
+#info-container{
+width:100%;
+background-color:#efefef;
+}
 
 footer {background-color: black;
 margin: 0;}
