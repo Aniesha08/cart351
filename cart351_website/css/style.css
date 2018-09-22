@@ -5,17 +5,17 @@
 h1, h2, h3 {font-family: 'Roboto', sans-serif;
 color: #59999e;}
 
+strong {color: #59999e;}
+
 p, li {font-family: 'Barlow', sans-serif;}
 
 li{color: #717171;
 list-style-type: square;}
 
-ul li a {/*text-decoration: none;*/
+ul li a {
 color: #717171;}
 
-#header {text-align: center;
-/*background-color: #6fc8d4;
-padding: 2em;*/}
+#header {text-align: center;}
 
 img{width:100%;}
 
@@ -34,9 +34,19 @@ width:100%;
 background-color:#efefef;
 }
 
-footer {background-color: black;
+footer {background-color: #59999e;
 margin: 0;}
 
 footer p{color: white;
-padding: 1em;
-text-align: center;}
+font-family: 'Roboto', sans-serif;
+text-align: center;
+padding: 1em;}
+
+@media (max-width: 745px){
+    div.info {width:80%;}
+
+}
+
+@media (max-width: 890px){  
+    div.info {width:80%;}
+}
