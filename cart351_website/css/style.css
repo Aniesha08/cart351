@@ -1,0 +1,38 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Barlow');
+
+h1, h2, h3 {font-family: 'Roboto', sans-serif;
+color: #59999e;}
+
+p, li {font-family: 'Barlow', sans-serif;}
+
+hr{width: 50%;}
+
+li{color: #717171;
+list-style-type: square;}
+
+ul li a {/*text-decoration: none;*/
+color: #717171;}
+
+#header {text-align: center;
+/*background-color: #6fc8d4;
+padding: 2em;*/}
+
+img{width:100%;}
+
+#header h1 {color: #ffffff;
+margin: 0;}
+
+#info{color: #717171;
+width:50%;
+margin: 0 auto;
+line-height: 24px;
+margin-top: 3em;}
+
+footer {background-color: black;
+margin: 0;}
+
+footer p{color: white;
+padding: 1em;
+text-align: center;}
