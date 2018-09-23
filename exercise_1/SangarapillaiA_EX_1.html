@@ -43,25 +43,37 @@
     if(event.target.id==="c"){
     document.getElementById('displayText').innerHTML = "This is Text For Box C";
     console.log("This is Text For Box C");
+    paragraph.style.display = "inline-block";
     }
 
     else if(event.target.id==="d"){
     document.getElementById('displayText').innerHTML = "This is Text For Box D";
     console.log("This is Text For Box E");
+    paragraph.style.display = "inline-block";
     }
 
     else if(event.target.id==="e"){
     document.getElementById('displayText').innerHTML = "This is Text For Box E";
     console.log("This is Text For Box D");
+    paragraph.style.display = "inline-block";
+    }
+
+    else if(event.target.id==="displayText"){
+    paragraph.style.display = "none";
     }
 };
 
+    // Variables Defines
     let cBox = document.getElementById('c');
     let dBox = document.getElementById('d');
     let eBox = document.getElementById('e');
+    let paragraph = document.getElementById('displayText');
+
+    // Event Listeners to Make Boxes and Paragraph Clickable
     cBox.addEventListener('click', handleClick);
     dBox.addEventListener('click', handleClick);
     eBox.addEventListener('click', handleClick);
+    paragraph.addEventListener('click', handleClick);
   }
  </script>
 
