@@ -38,8 +38,9 @@
     console.log("testing");
   } //on load
 
-  window.onload = function(){
-  let handleClick = function (event){
+  // Callback function for Clickable Boxes & Clickable/Clearable Paragraph
+    window.onload = function(){
+    let handleClick = function (event){
     if(event.target.id==="c"){
     document.getElementById('displayText').innerHTML = "This is Text For Box C";
     console.log("This is Text For Box C");
@@ -63,17 +64,36 @@
     }
 };
 
-    // Variables Defines
+    // BONUS: Callback functions for mouseover/mouseout
+    let trans = function (event){
+    this.style.opacity = 0.5;
+    }
+
+    let opaque = function (event){
+    this.style.opacity = 1;
+    }
+
+    // Variables Defined
     let cBox = document.getElementById('c');
     let dBox = document.getElementById('d');
     let eBox = document.getElementById('e');
     let paragraph = document.getElementById('displayText');
 
-    // Event Listeners to Make Boxes and Paragraph Clickable
+    // Event Listeners to Make Boxes Clickable and Paragraph Clickable/Clearable
     cBox.addEventListener('click', handleClick);
     dBox.addEventListener('click', handleClick);
     eBox.addEventListener('click', handleClick);
     paragraph.addEventListener('click', handleClick);
+
+    // BONUS: Event Listeners for mouseover/mouseout that changes the opacity of the boxes
+    cBox.addEventListener('mouseover', trans);
+    cBox.addEventListener('mouseout', opaque);
+
+    dBox.addEventListener('mouseover', trans);
+    dBox.addEventListener('mouseout', opaque);
+
+    eBox.addEventListener('mouseover', trans);
+    eBox.addEventListener('mouseout', opaque);
   }
  </script>
 
