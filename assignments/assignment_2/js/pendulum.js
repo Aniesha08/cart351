@@ -1,5 +1,5 @@
 class Pendulum {
-constructor(origin, radius = 25, arm = 250) {
+constructor(origin, radius = 20, arm = 200) {
   this.origin = origin
   this.bob = createVector(origin.x, origin.y + arm)
 
@@ -44,7 +44,7 @@ render() {
     fill(255)
   }
 
-  ellipse(this.bob.x, this.bob.y, this.radius * 2)
+  ellipse(this.bob.x, this.bob.y, this.radius * 2) 
 }
 
 // All the code below is for mouse interaction
@@ -59,7 +59,7 @@ clicked() {
 stopDragging() {
   if (this.dragging) {
     this.aVel = 0
-    this.dragging = false
+    this.dragging = false // stops it from sticking with the mouse, enabling you to release 
   }
 }
 
