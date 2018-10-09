@@ -1,0 +1,98 @@
+<html>
+<head>
+  <title> Canvas Tutorial </title>
+  <style>
+  body{
+    margin:0;
+    padding:0;
+    background-image: url("bg.jpg");
+    background-size: cover;
+  }
+  canvas{
+    background:black;
+    position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+  }
+  </style>
+  <script>
+  //only run this once the window loads
+window.onload = function(){
+// step 1 access the canvas element && the graphics context....
+let canvas = document.getElementById('testCanvas');
+let canvasContext = canvas.getContext('2d');
+
+const MAX_SQUARES =500;
+let mySquares = [];
+let colors = ["#df439e","#c379e5","#0789df","#1fe9d6","#acf800","#fffc00","#ff931e","#ff5451"];
+
+//fill the array with objects
+for (let i =0; i< MAX_SQUARES;i++){
+
+/** SABINE CHANGE**/
+let offsetX = 40;
+let offsetY = Math.floor(Math.random()*(canvas.height-100)+50); //generate a random y
+
+/** SABINE CHANGE**/
+// set the x to  be off screen - but space them out i.e. first square will be
+//-50, second, -100, third, -150 ...
+//possibility: randomize the offset ....
+//offsetX = (Math.random()*100)+75;
+mySquares.push(new myRunningSquares(-i*offsetX,offsetY,colors[i%colors.length]));
+}
+
+requestAnimationFrame(runAni);
+
+// this is our callback function (to simulate a loop ... )
+function runAni(){
+  //need to reset the background :)
+  // clear the canvas ...
+  canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+
+  // go through each object and perform required ops
+  for (let i =0; i< MAX_SQUARES;i++){
+    mySquares[i].update();
+    mySquares[i].render();
+
+  }
+  // recursive call ...
+  requestAnimationFrame(runAni);
+}
+
+function myRunningSquares(x,y,c){
+  this.xPos = x;//initial vals
+  this.yPos = y;
+// position the squares starting from 3/4 of the canvas height
+//  y = (canvas.height-300 + Math.floor(Math.random() * 300));
+  this.squareColor = c;
+
+
+//member function
+  this.render =function(){
+      canvasContext.fillStyle = this.squareColor;// change the color we are using
+      /**SABINE CHANGE--> use this.xPos, this.yPos....)*/
+      canvasContext.fillRect(this.xPos,this.yPos,30,30);
+    }
+   //member function for updating
+   this.update = function(){
+       if (myRunningSquares.colors === "#df439e"){
+           console.log ('this color');
+       }
+
+
+    this.xPos++;
+    }
+  } //end myRunningSquare
+
+  }//end window onload
+  </script>
+</head>
+<body>
+<canvas id="testCanvas" width="700" height="600">
+
+</canvas>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<html>
+<head>
+  <title> Canvas Tutorial </title>
+  <style>
+  body{
+    margin:0;
+    padding:0;
+  }
+  canvas{
+    background:black;
+    margin:0;
+    padding:0;
+  }
+  </style>
+  <script>
+  //only run this once the window loads
+window.onload = function(){
+// step 1 access the canvas element && the graphics context....
+let canvas = document.getElementById('testCanvas');
+let canvasContext = canvas.getContext('2d');
+
+const MAX_SQUARES =50;
+let mySquares = [];
+let colors = ["#8ED6FF","#c379e5","#e22626","#61f495","#4953c1","#ffb807","#ffc907"];
+
+//fill the array with objects
+for (let i =0; i< MAX_SQUARES;i++){
+let offsetX = 50;
+let offsetY = 50;
+mySquares.push(new myRunningSquares(i+offsetX,i+offsetY,colors[i%colors.length]));
+}
+
+requestAnimationFrame(runAni);
+
+// this is our callback function (to simulate a loop ... )
+function runAni(){
+  //need to reset the background :)
+  // clear the canvas ...
+  canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+
+  // go through each object and perform required ops
+  for (let i =0; i< MAX_SQUARES;i++){
+    mySquares[i].update();
+    mySquares[i].render();
+
+  }
+  // recursive call ...
+  requestAnimationFrame(runAni);
+}
+
+function myRunningSquares(x,y,c){
+  this.xPos = x;
+  x = Math.floor(Math.random() * 500);
+  this.yPos = y;
+  // position the squares starting from 3/4 of the canvas height
+  y = (canvas.height-300 + Math.floor(Math.random() * 300));
+  this.squareColor = c;
+
+//member function
+  this.render =function(){
+      canvasContext.fillStyle = this.squareColor;// change the color we are using
+      canvasContext.fillRect(x,y,30,30);
+    }
+  //member function for updating
+  this.update = function(){
+
+    if (this.xPos > canvas.height || this.yPos > canvas.height){
+    // something to prevent the squares from going over the canvas.height
+    }
+
+    this.xPos= x++;
+    this.yPos= 0;
+     }
+  } //end myRunningSquare
+
+  }//end window onload
+  </script>
+</head>
+<body>
+<canvas id="testCanvas" width="500" height="500">
+
+</canvas>
+</body>
+</html>
