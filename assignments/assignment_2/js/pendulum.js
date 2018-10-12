@@ -1,3 +1,7 @@
+// Code modified from Pendulum Swing by Fredo Corleone
+// https://codepen.io/eternalsunshineofspotlessmind/pen/wxbwqE
+// P5
+
 class Pendulum {
 constructor(origin, radius = 20, arm = 200) {
   this.origin = origin
@@ -21,6 +25,7 @@ go () {
   this.render()
 }
 
+// Movement of the Pendulum ball
 update() {
   if (!this.dragging) {
     this.angle += this.aVel
@@ -44,10 +49,10 @@ render() {
     fill(255)
   }
 
-  ellipse(this.bob.x, this.bob.y, this.radius * 2) 
+  ellipse(this.bob.x, this.bob.y, this.radius * 2)
 }
 
-// All the code below is for mouse interaction
+// Mouse interactions
 
 clicked() {
   let distance = dist(mouseX, mouseY, this.bob.x, this.bob.y)
@@ -59,7 +64,7 @@ clicked() {
 stopDragging() {
   if (this.dragging) {
     this.aVel = 0
-    this.dragging = false // stops it from sticking with the mouse, enabling you to release 
+    this.dragging = false // stops it from sticking with the mouse, enabling you to release
   }
 }
 
