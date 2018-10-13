@@ -25,14 +25,14 @@ let tone8;
 
 // Preload the sound
 function preload(){
-tone1 = loadSound ("../sounds/tone_1.mp3");
-tone2 = loadSound ("../sounds/tone_2.mp3");
-tone3 = loadSound ("../sounds/tone_3.mp3");
-tone4 = loadSound ("../sounds/tone_4.mp3");
-tone5 = loadSound ("../sounds/tone_5.mp3");
-tone6 = loadSound ("../sounds/tone_6.mp3");
-tone7 = loadSound ("../sounds/tone_7.mp3");
-tone8 = loadSound ("../sounds/tone_8.mp3");
+tone1 = loadSound ("sounds/tone_1.mp3");
+tone2 = loadSound ("sounds/tone_2.mp3");
+tone3 = loadSound ("sounds/tone_3.mp3");
+tone4 = loadSound ("sounds/tone_4.mp3");
+tone5 = loadSound ("sounds/tone_5.mp3");
+tone6 = loadSound ("sounds/tone_6.mp3");
+tone7 = loadSound ("sounds/tone_7.mp3");
+tone8 = loadSound ("sounds/tone_8.mp3");
 }
 
 function setup() {
