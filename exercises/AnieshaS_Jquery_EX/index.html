@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
    <title>JSON LOAD EX</title>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <script src = "jquery/jquery-3.3.1.min.js"></script>
    <script>
    $(document).ready(function(){
-   let header = $('header');
+   // let header = $('header');
    let section = $('section');
    let loaded=false;
 
@@ -20,7 +21,7 @@
             //set boolean to true
             loaded=true;
             //step 2: display header on html page
-            populateHeader(data);
+            // populateHeader(data);
             //step 3: display the books ....
             showApps(data);
           })
@@ -33,18 +34,18 @@
           console.log("data was loaded");
         }
     });
-    function populateHeader(data){
-      let sampleHeader = $("<h1>");
-      $(sampleHeader).text(data.Label);
-      $(sampleHeader).appendTo(header);
-
-
-      // let samplePara = $("<p>");
-      // console.log(data.SubLabel);
-      // $(samplePara).text(data.SubLabel);
-      // $(samplePara).appendTo(header);
-
-    }
+    // function populateHeader(data){
+    //   let sampleHeader = $("<h1>");
+    //   $(sampleHeader).text(data.Label);
+    //   $(sampleHeader).appendTo(header);
+    //
+    //
+    //   // let samplePara = $("<p>");
+    //   // console.log(data.SubLabel);
+    //   // $(samplePara).text(data.SubLabel);
+    //   // $(samplePara).appendTo(header);
+    //
+    // }
 
 
     function showApps(data){
@@ -54,7 +55,7 @@
     for (var i = 0; i < apps.length; i++) {
       let sampleBookArticle = $('<article>');
       // let sampleBookH2 =('<h1>');
-      let samplePara1 = $("<h1>");
+      let samplePara1 = $("<h3>");
       let samplePara2 = $("<p>");
       let samplePara3 = $("<p>");
       // let sampleList= $("<ul>");
@@ -103,13 +104,22 @@ body {
 /* header styles */
 
  h1 {
-  margin-left:30vw;
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Quicksand', sans-serif;
 }
 
+h3{color: #03a9f4;
+font-family: 'Quicksand', sans-serif;}
 
-header p {
-  margin-left:30vw;
+header p{
+  text-align: center;
+  margin-left:auto;
+  margin-right: auto;
+  color: white;
+  width: 50%;
 }
+
 section{
   margin-left:25vw;
 }
@@ -117,16 +127,14 @@ section{
 /* section styles */
 
 section article {
-  margin-left:2%;
-  margin-right:20%;
+  width: 65%;
   margin-bottom:2%;
-  background:#b4e4f6;
-  padding:2%;
+  color: white;
+  border-bottom: 1px solid white;
 }
 
 section p {
   font-size:1em;
-  font-weight: bold;
 }
 
 section ul {
@@ -140,7 +148,7 @@ h2 {
   margin-bottom: 10px;
 }
 #getData{
-  background:#F44336;
+  background:#8bc34a;
   color: white;
   font-weight: bold;
   width:250px;
@@ -150,6 +158,8 @@ h2 {
   margin:2%;
 }
 
+#button {text-align:center;}
+
 .hero-img{display:block;
 margin-left: auto;
 margin-right: auto;
@@ -157,12 +167,18 @@ width: 60%;}
   </style>
 
   <body>
-  <img class="hero-img" src="https://hybrid.concordia.ca/A_ANGA/exercises/SangarapillaiA_JQuery/imgs/mobile.jpeg" alt="iPhone" />
-  <br />
-  <input type="button" id="getData" value="Submit" />
       <header>
-
+      <h1>Social Media Usage</h1>
+      <p>The usage of social media apps have started to become an essential part of contributing into our social lives. There are tons of
+      social media applications available for mobile phones. I have spent the past 4 days monitoring how long
+      I spend on social media per day. </p>
       </header>
+
+      <img class="hero-img" src="https://hybrid.concordia.ca/A_ANGA/exercises/SangarapillaiA_JQuery/imgs/mobile.jpeg" alt="iPhone" />
+      <br />
+      <div id="button">
+      <input type="button" id="getData" value="SUBMIT" />
+      </div>
 
       <section>
 
