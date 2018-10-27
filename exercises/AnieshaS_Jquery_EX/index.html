@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+   <title>JSON LOAD EX</title>
+  <script src = "jquery/jquery-3.3.1.min.js"></script>
+   <script>
+   $(document).ready(function(){
+   let header = $('header');
+   let section = $('section');
+   let loaded=false;
+
+   $("#getData").click(function(event){
+     if(loaded ===false){
+          console.log("clicked");
+          $.getJSON('info.json',function(data) {
+          //success
+            //step 1: console.log the result
+            console.log(data);
+            //set boolean to true
+            loaded=true;
+            //step 2: display header on html page
+            populateHeader(data);
+            //step 3: display the books ....
+            showApps(data);
+          })
+          //fail
+          .fail(function() {
+            console.log( "error" );
+          });
+        }
+        else{
+          console.log("data was loaded");
+        }
+    });
+    function populateHeader(data){
+      let sampleHeader = $("<h1>");
+      $(sampleHeader).text(data.Label);
+      $(sampleHeader).appendTo(header);
+
+
+      // let samplePara = $("<p>");
+      // console.log(data.SubLabel);
+      // $(samplePara).text(data.SubLabel);
+      // $(samplePara).appendTo(header);
+
+    }
+
+
+    function showApps(data){
+    // our array of each book objects
+    let apps = data['Apps'];
+
+    for (var i = 0; i < apps.length; i++) {
+      let sampleBookArticle = $('<article>');
+      // let sampleBookH2 =('<h1>');
+      let samplePara1 = $("<h1>");
+      let samplePara2 = $("<p>");
+      let samplePara3 = $("<p>");
+      // let sampleList= $("<ul>");
+
+
+      // $(sampleBookH2).text(apps[i].Title);
+      $(samplePara1).text(apps[i].Application);
+      $(samplePara2).text(apps[i].Duration);
+      $(samplePara3).text(apps[i].Percentage);
+
+
+      // let bookPrices = books[i].Price;
+      //
+      //
+      // for (let j = 0; j < bookPrices.length; j++) {
+      //   let listItem = $('<li>');
+      //   $(listItem).text("type:: "+ bookPrices[j].type+" & price:: $"+bookPrices[j].price);
+      //   $(listItem).appendTo(sampleList);
+      // }
+
+      // $(sampleBookH2).appendTo(sampleBookArticle);
+      $(samplePara1).appendTo(sampleBookArticle);
+      $(samplePara2).appendTo(sampleBookArticle);
+      $(samplePara3).appendTo(sampleBookArticle);
+      // $(samplePara4).appendTo(sampleBookArticle);
+      // $(sampleList).appendTo(sampleBookArticle);
+
+      $(section).append(sampleBookArticle);
+    } //apps
+  }//function
+ });
+
+   </script>
+  </head>
+
+  <style>
+
+html {
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+
+body {
+  width: 100%;
+  background-color: black;
+}
+/* header styles */
+
+ h1 {
+  margin-left:30vw;
+}
+
+
+header p {
+  margin-left:30vw;
+}
+section{
+  margin-left:25vw;
+}
+
+/* section styles */
+
+section article {
+  margin-left:2%;
+  margin-right:20%;
+  margin-bottom:2%;
+  background:#b4e4f6;
+  padding:2%;
+}
+
+section p {
+  font-size:1em;
+  font-weight: bold;
+}
+
+section ul {
+  margin-top: 0;
+  font-size:1em;
+}
+
+h2 {
+  font-size: 2.5rem;
+  letter-spacing: -5px;
+  margin-bottom: 10px;
+}
+#getData{
+  background:#F44336;
+  color: white;
+  font-weight: bold;
+  width:250px;
+  height:30px;
+  border: none;
+  border-radius: 5px;
+  margin:2%;
+}
+
+.hero-img{display:block;
+margin-left: auto;
+margin-right: auto;
+width: 60%;}
+  </style>
+
+  <body>
+  <img class="hero-img" src="https://hybrid.concordia.ca/A_ANGA/exercises/SangarapillaiA_JQuery/imgs/mobile.jpeg" alt="iPhone" />
+  <br />
+  <input type="button" id="getData" value="Submit" />
+      <header>
+
+      </header>
+
+      <section>
+
+      </section>
+
+
+  </body>
+</html>

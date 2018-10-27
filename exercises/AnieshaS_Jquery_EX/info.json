@@ -1,0 +1,31 @@
+{
+  "Label":"Application Usage",
+  "Apps":
+  [
+  {"Application": "Instagram",
+  "Duration": "Duration: 1.2 hrs",
+  "Percentage": "Percentage Of Usage: 33%"
+  },
+
+  {"Application": "Snapchat",
+  "Duration":"Duration: 45 mins",
+  "Percentage": "Percentage Of Usage: 31%"
+  },
+
+  {"Application": "Whatsapp",
+  "Duration":"Duration: 42 mins",
+  "Percentage": "Percentage Of Usage: 16%"
+  },
+
+  {"Application": "Faceboook",
+  "Duration":"Duration: 3 mins",
+  "Percentage": "Percentage Of Usage: 31%"
+  },
+
+  {"Application": "Messenger",
+  "Duration":"Duration: 3 mins",
+  "Percentage": "Percentage Of Usage: 31%"
+  }
+
+   ]
+  }
