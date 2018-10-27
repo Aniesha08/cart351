@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
    <title>JSON LOAD EX</title>
-  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
   <script src = "jquery/jquery-3.3.1.min.js"></script>
    <script>
    $(document).ready(function(){
@@ -106,11 +106,12 @@ body {
  h1 {
   text-align: center;
   color: #ffffff;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 4%;
 }
 
 h3{color: #03a9f4;
-font-family: 'Quicksand', sans-serif;}
+font-family: 'Roboto', sans-serif;}
 
 header p{
   text-align: center;
@@ -118,6 +119,10 @@ header p{
   margin-right: auto;
   color: white;
   width: 50%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin-bottom: 3%;
+  line-height: 24px;
 }
 
 section{
@@ -135,6 +140,8 @@ section article {
 
 section p {
   font-size:1em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 
 section ul {
@@ -147,15 +154,23 @@ h2 {
   letter-spacing: -5px;
   margin-bottom: 10px;
 }
+
+input#searchText{
+  font-style: italic;
+  color: grey;
+  width: 200px;
+  height: 25px;
+  border: none;
+}
 #getData{
   background:#8bc34a;
   color: white;
   font-weight: bold;
-  width:250px;
+  width:100px;
   height:30px;
   border: none;
   border-radius: 5px;
-  margin:2%;
+  margin:1%;
 }
 
 #button {text-align:center;}
@@ -169,14 +184,16 @@ width: 60%;}
   <body>
       <header>
       <h1>Social Media Usage</h1>
-      <p>The usage of social media apps have started to become an essential part of contributing into our social lives. There are tons of
-      social media applications available for mobile phones. I have spent the past 4 days monitoring how long
-      I spend on social media per day. </p>
+      <p>The use of social media apps have started to become an essential part of contributing into our social lives.
+       I have spent the past 4 days monitoring how long I spend on social media per day. The duration time involves
+      the time I have spent social media browsing & chatting. The percentage is how much total usage it took up
+     out of all the other apps I have used that day.</p>
       </header>
 
       <img class="hero-img" src="https://hybrid.concordia.ca/A_ANGA/exercises/SangarapillaiA_JQuery/imgs/mobile.jpeg" alt="iPhone" />
       <br />
       <div id="button">
+      <input type="text" id="searchText" value=" search Day" />
       <input type="button" id="getData" value="SUBMIT" />
       </div>
 
