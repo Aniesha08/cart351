@@ -118,10 +118,7 @@
       $(section).append(showDayInfo);
     } // if statement closing
 
-    // alert if person typed Friday, Saturday or Sunday.
-    else if ($("#searchDay").val() === "Friday"){
-      alert('No results available. Please type a day between Monday to Thursday only.');
-    }
+    // alert if person typed Saturday or Sunday.
     else if ($("#searchDay").val() === "Saturday"){
       alert('No results available. Please type a day between Monday to Thursday only.');
     }
