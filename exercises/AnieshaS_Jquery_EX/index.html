@@ -9,12 +9,18 @@
    $(document).ready(function(){
    // let header = $('header');
    let section = $('section');
-   let loaded=false;
+  // let loaded=false;
 
    $("#getData").click(function(event){
-     if(loaded ===false){
+
+     //SABINE::
+     //empty out previous result
+     $("section").empty();
+     //SABINE:: we want to allow for user to reclick...
+     //if(loaded ===false){
           console.log("clicked");
-          $.getJSON('info.json',function(data) {
+          $.getJSON('info.json', function(data) {
+        //  let searchItem = $("#searchDay").val(Apps.Day);
           //success
             //step 1: console.log the result
             console.log(data);
@@ -29,62 +35,96 @@
           .fail(function() {
             console.log( "error" );
           });
-        }
-        else{
-          console.log("data was loaded");
-        }
+      //  }
+        //else{
+          //console.log("data was loaded");
+        //}
     });
-    // function populateHeader(data){
-    //   let sampleHeader = $("<h1>");
-    //   $(sampleHeader).text(data.Label);
-    //   $(sampleHeader).appendTo(header);
-    //
-    //
-    //   // let samplePara = $("<p>");
-    //   // console.log(data.SubLabel);
-    //   // $(samplePara).text(data.SubLabel);
-    //   // $(samplePara).appendTo(header);
-    //
-    // }
 
 
+// display the results
     function showApps(data){
     // our array of each book objects
     let apps = data['Apps'];
 
-    for (var i = 0; i < apps.length; i++) {
-      let sampleBookArticle = $('<article>');
-      // let sampleBookH2 =('<h1>');
-      let samplePara1 = $("<h3>");
-      let samplePara2 = $("<p>");
-      let samplePara3 = $("<p>");
-      // let sampleList= $("<ul>");
+    // SABINE: search item is JUST the value from the input field ..
+    let searchItem = $("#searchDay").val();
+    //let searchItem = $("#searchDay").val(apps[i].Day);
 
+
+
+//SABINE:: not here ...
+    //if (searchItem == "Monday"){
+
+    for (var i = 0; i < apps.length; i++) {
+      //SABINE:: here:: test if the search item that user input is the same as that
+      //object property in the array
+      if(searchItem ===apps[i].Day){
+        console.log("in day"+apps[i].Day);
+      let showDayInfo = $('<article>');
+      // let sampleBookH2 =('<h1>');
+      let weekDay = $("<h3>");
+      let instagram = $("<p>").addClass("insta division");
+      let duration1 = $("<p>");
+      let percentage1 = $("<p>");
+
+      let snapchat = $("<p>").addClass("snapchat division");
+      let duration2 = $("<p>");
+      let percentage2 = $("<p>");
+
+      let whatsapp = $("<p>").addClass("whatsapp division");
+      let duration3 = $("<p>");
+      let percentage3 = $("<p>");
+
+      let messenger = $("<p>").addClass("messenger division");
+      let duration4 = $("<p>");
+      let percentage4 = $("<p>");
 
       // $(sampleBookH2).text(apps[i].Title);
-      $(samplePara1).text(apps[i].Application);
-      $(samplePara2).text(apps[i].Duration);
-      $(samplePara3).text(apps[i].Percentage);
+      $(weekDay).text(apps[i].Day);
+      $(instagram).text(apps[i].Instagram);
+      $(duration1).text(apps[i].Duration1);
+      $(percentage1).text(apps[i].Percentage1);
 
+      $(snapchat).text(apps[i].Snapchat);
+      $(duration2).text(apps[i].Duration2);
+      $(percentage2).text(apps[i].Percentage2);
 
-      // let bookPrices = books[i].Price;
-      //
-      //
-      // for (let j = 0; j < bookPrices.length; j++) {
-      //   let listItem = $('<li>');
-      //   $(listItem).text("type:: "+ bookPrices[j].type+" & price:: $"+bookPrices[j].price);
-      //   $(listItem).appendTo(sampleList);
-      // }
+      $(whatsapp).text(apps[i].Whatsapp);
+      $(duration3).text(apps[i].Duration3);
+      $(percentage3).text(apps[i].Percentage3);
+
+      $(messenger).text(apps[i].Messenger);
+      $(duration4).text(apps[i].Duration4);
+      $(percentage4).text(apps[i].Percentage4);
 
       // $(sampleBookH2).appendTo(sampleBookArticle);
-      $(samplePara1).appendTo(sampleBookArticle);
-      $(samplePara2).appendTo(sampleBookArticle);
-      $(samplePara3).appendTo(sampleBookArticle);
-      // $(samplePara4).appendTo(sampleBookArticle);
-      // $(sampleList).appendTo(sampleBookArticle);
+      $(weekDay).appendTo(showDayInfo);
+      $(instagram).appendTo(showDayInfo);
+      $(duration1).appendTo(showDayInfo);
+      $(percentage1).appendTo(showDayInfo);
 
-      $(section).append(sampleBookArticle);
-    } //apps
+      $(snapchat).appendTo(showDayInfo);
+      $(duration2).appendTo(showDayInfo);
+      $(percentage2).appendTo(showDayInfo);
+
+      $(whatsapp).appendTo(showDayInfo);
+      $(duration3).appendTo(showDayInfo);
+      $(percentage3).appendTo(showDayInfo);
+
+      $(messenger).appendTo(showDayInfo);
+      $(duration4).appendTo(showDayInfo);
+      $(percentage4).appendTo(showDayInfo);
+
+      $(section).append(showDayInfo);
+    } // if statement closing
+    else if ($("#searchDay").val() === "Saturday"){
+      alert('No results available. Please type a date between Monday to Friday only.');
+    }
+    else if ($("#searchDay").val() === "Sunday"){
+      alert('No results available. Please type a date between Monday to Friday only.');
+    }
+  } // for loop closing
   }//function
  });
 
@@ -110,7 +150,7 @@ body {
   margin-top: 4%;
 }
 
-h3{color: #03a9f4;
+h3{color: #ffffff;
 font-family: 'Roboto', sans-serif;}
 
 header p{
@@ -135,7 +175,6 @@ section article {
   width: 65%;
   margin-bottom:2%;
   color: white;
-  border-bottom: 1px solid white;
 }
 
 section p {
@@ -155,7 +194,7 @@ h2 {
   margin-bottom: 10px;
 }
 
-input#searchText{
+input#searchDay{
   font-style: italic;
   color: grey;
   width: 200px;
@@ -179,6 +218,24 @@ input#searchText{
 margin-left: auto;
 margin-right: auto;
 width: 60%;}
+
+.division{
+  margin-top: 5%;
+  border-bottom: 1px solid white;
+}
+
+.insta{color: #d30067;
+font-weight: bold;}
+
+.snapchat{color: #ffeb3b;
+font-weight: bold;}
+
+.whatsapp{color: #8bc34a;
+font-weight: bold;}
+
+.messenger{color: #03a9f4;
+font-weight: bold;}
+
   </style>
 
   <body>
@@ -187,13 +244,13 @@ width: 60%;}
       <p>The use of social media apps have started to become an essential part of contributing into our social lives.
        I have spent the past 4 days monitoring how long I spend on social media per day. The duration time involves
       the time I have spent social media browsing & chatting. The percentage is how much total usage it took up
-     out of all the other apps I have used that day.</p>
+     out of all the other apps I have used during that specific day.</p>
       </header>
 
       <img class="hero-img" src="https://hybrid.concordia.ca/A_ANGA/exercises/SangarapillaiA_JQuery/imgs/mobile.jpeg" alt="iPhone" />
       <br />
       <div id="button">
-      <input type="text" id="searchText" value=" search Day" />
+      <input type="text" id="searchDay" value=" Search Day" />
       <input type="button" id="getData" value="SUBMIT" />
       </div>
 
