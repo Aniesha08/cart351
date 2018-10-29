@@ -20,15 +20,12 @@
      //if(loaded ===false){
           console.log("clicked");
           $.getJSON('info.json', function(data) {
-        //  let searchItem = $("#searchDay").val(Apps.Day);
           //success
             //step 1: console.log the result
             console.log(data);
             //set boolean to true
             loaded=true;
-            //step 2: display header on html page
-            // populateHeader(data);
-            //step 3: display the books ....
+            //step 2: display the data ....
             showApps(data);
           })
           //fail
@@ -61,8 +58,10 @@
       //object property in the array
       if(searchItem ===apps[i].Day){
         console.log("in day"+apps[i].Day);
+
+      // variables to create a selector
       let showDayInfo = $('<article>');
-      // let sampleBookH2 =('<h1>');
+
       let weekDay = $("<h3>");
       let instagram = $("<p>").addClass("insta division");
       let duration1 = $("<p>");
@@ -80,8 +79,8 @@
       let duration4 = $("<p>");
       let percentage4 = $("<p>");
 
-      // $(sampleBookH2).text(apps[i].Title);
-      $(weekDay).text(apps[i].Day);
+      // tells us which text to pick up from data
+      $(weekDay).text("Displaying "+apps[i].Day+" results");
       $(instagram).text(apps[i].Instagram);
       $(duration1).text(apps[i].Duration1);
       $(percentage1).text(apps[i].Percentage1);
@@ -98,7 +97,7 @@
       $(duration4).text(apps[i].Duration4);
       $(percentage4).text(apps[i].Percentage4);
 
-      // $(sampleBookH2).appendTo(sampleBookArticle);
+      // display the data in the html document
       $(weekDay).appendTo(showDayInfo);
       $(instagram).appendTo(showDayInfo);
       $(duration1).appendTo(showDayInfo);
@@ -118,11 +117,16 @@
 
       $(section).append(showDayInfo);
     } // if statement closing
+
+    // alert if person typed Friday, Saturday or Sunday.
+    else if ($("#searchDay").val() === "Friday"){
+      alert('No results available. Please type a day between Monday to Thursday only.');
+    }
     else if ($("#searchDay").val() === "Saturday"){
-      alert('No results available. Please type a date between Monday to Friday only.');
+      alert('No results available. Please type a day between Monday to Thursday only.');
     }
     else if ($("#searchDay").val() === "Sunday"){
-      alert('No results available. Please type a date between Monday to Friday only.');
+      alert('No results available. Please type a day between Monday to Thursday only.');
     }
   } // for loop closing
   }//function
@@ -151,7 +155,9 @@ body {
 }
 
 h3{color: #ffffff;
-font-family: 'Roboto', sans-serif;}
+font-family: 'Roboto', sans-serif;
+font-style: italic;
+font-weight: 300;}
 
 header p{
   text-align: center;

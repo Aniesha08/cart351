@@ -59,38 +59,38 @@
 
   {"Day": "Thursday",
     "Instagram": "Instagram",
-    "Duration1": "Duration: 1.2 hrs",
-    "Percentage1": "Percentage Of Usage: 33%",
+    "Duration1": "Duration: 50 min",
+    "Percentage1": "Percentage Of Usage: 24%",
 
     "Snapchat": "Snapchat",
-    "Duration2": "Duration: 1.2 hrs",
-    "Percentage2": "Percentage Of Usage: 33%",
+    "Duration2": "Duration: 57 min",
+    "Percentage2": "Percentage Of Usage: 30%",
 
     "Whatsapp": "Whatsapp",
-    "Duration3": "Duration: 1.2 hrs",
-    "Percentage3": "Percentage Of Usage: 33%",
+    "Duration3": "Duration: 10 mins",
+    "Percentage3": "Percentage Of Usage: 3%",
 
     "Messenger": "Messenger",
-    "Duration4": "Duration: 1.2 hrs",
-    "Percentage4": "Percentage Of Usage: 33%"
+    "Duration4": "Duration: 5 min",
+    "Percentage4": "Percentage Of Usage: 4%"
   },
 
   {"Day": "Friday",
     "Instagram": "Instagram",
-    "Duration1": "Duration: 1.2 hrs",
-    "Percentage1": "Percentage Of Usage: 33%",
+    "Duration1": "Duration: 1.3 hrs",
+    "Percentage1": "Percentage Of Usage: 34%",
 
     "Snapchat": "Snapchat",
-    "Duration2": "Duration: 1.2 hrs",
-    "Percentage2": "Percentage Of Usage: 33%",
+    "Duration2": "Duration: 30 min",
+    "Percentage2": "Percentage Of Usage: 18%",
 
     "Whatsapp": "Whatsapp",
-    "Duration3": "Duration: 1.2 hrs",
-    "Percentage3": "Percentage Of Usage: 33%",
+    "Duration3": "Duration: 25 min",
+    "Percentage3": "Percentage Of Usage: 20%",
 
     "Messenger": "Messenger",
-    "Duration4": "Duration: 1.2 hrs",
-    "Percentage4": "Percentage Of Usage: 33%"
+    "Duration4": "Duration: 21 min",
+    "Percentage4": "Percentage Of Usage: 18%"
   }
    ]
   }
