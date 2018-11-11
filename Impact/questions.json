@@ -1,0 +1,87 @@
+{
+  "Questions":
+  [
+  {"Question2": "Question 2",
+  "Anger2": "Option 1",
+  "Fear2": "Option 2",
+  "Disgust2": "Option 3",
+  "Carefree2": "Option 4",
+  "Happiness2": "Option 5",
+  "Sadness2": "Option 6"
+  },
+
+  {"Question3": "Question 3",
+  "Anger3": "Option 1",
+  "Fear3": "Option 2",
+  "Disgust3": "Option 3",
+  "Carefree3": "Option 4",
+  "Happiness3": "Option 5",
+  "Sadness3": "Option 6"
+  },
+
+  {"Question4": "Question 4",
+  "Anger4": "Option 1",
+  "Fear4": "Option 2",
+  "Disgust4": "Option 3",
+  "Carefree4": "Option 4",
+  "Happiness4": "Option 5",
+  "Sadness4": "Option 6"
+  },
+
+  {"Question5": "Question 5",
+  "Anger5": "Option 1",
+  "Fear5": "Option 2",
+  "Disgust5": "Option 3",
+  "Carefree5": "Option 4",
+  "Happiness5": "Option 5",
+  "Sadness5": "Option 6"
+  },
+
+  {"Question6": "Question 6",
+  "Anger6": "Option 1",
+  "Fear6": "Option 2",
+  "Disgust6": "Option 3",
+  "Carefree6": "Option 4",
+  "Happiness6": "Option 5",
+  "Sadness6": "Option 6"
+  },
+
+  {"Question7": "Question 7",
+  "Anger7": "Option 1",
+  "Fear7": "Option 2",
+  "Disgust7": "Option 3",
+  "Carefree7": "Option 4",
+  "Happiness7": "Option 5",
+  "Sadness7": "Option 6"
+  },
+
+  {"Question8": "Question 8",
+  "Anger8": "Option 1",
+  "Fear8": "Option 2",
+  "Disgust8": "Option 3",
+  "Carefree8": "Option 4",
+  "Happiness8": "Option 5",
+  "Sadness8": "Option 6"
+  },
+
+
+  {"Question9": "Question 9",
+  "Anger9": "Option 1",
+  "Fear9": "Option 2",
+  "Disgust9": "Option 3",
+  "Carefree9": "Option 4",
+  "Happiness9": "Option 5",
+  "Sadness9": "Option 6"
+  },
+
+  {"Question10": "Question 10",
+  "Anger10": "Option 1",
+  "Fear10": "Option 2",
+  "Disgust10": "Option 3",
+  "Carefree10": "Option 4",
+  "Happiness10": "Option 5",
+  "Sadness10": "Option 6"
+  }
+
+   ]
+  }
