@@ -6,79 +6,48 @@
 <script src = "jquery/jquery-3.3.1.min.js"></script>
 <script>
 $(document).ready(function(){
-   let container = $('info');
-   let loaded=false;
-   $("#next").click(function(event){
-      $("info").empty();
-     if(loaded ===false){
-          console.log("clicked");
+  let numberQuestion=0;
+    let questions;
           $.getJSON('questions.json',function(data) {
             //step 1: console.log the result
             console.log(data);
-            //set boolean to true
-            loaded=true;
-            //change the questions & options ....
-            changeQuestions(data);
+             questions = data['Questions'];
           })
           //fail
           .fail(function() {
             console.log( "error" );
           });
-        }
-        else{
-          console.log("data was loaded");
-        }
-    });
+          $("#next").click(function(event){
+            if(numberQuestion<questions.length){
+            changeQuestions(questions[numberQuestion]);
+              numberQuestion++;
+          }
+
+          });
+
 
     // display the results
-        function changeQuestions(data){
+        function changeQuestions(theCurrentQuestion){
         // our array of each book objects
-        let questions = data['Questions'];
+        console.log(theCurrentQuestion.Question)
 
-        for (var i = 0; i < questions.length; i++) {
-
-          // variables to create a selector
-          // let questionChange = $('<article>');
-
-          // let question = $("<h2>");
-          // let anger = $("<p>");
-          // let fear = $("<p>");
-          // let disgust = $("<p>");
-          // let carefree = $("<p>");
-          // let happiness = $("<p>");
-          // let sadness = $("<p>");
-
-          let questionChange = $("#info").html("<div>");
-
-          let question = $("#question").html("<h2>");
-          let anger = $("#anger").html("<p>");
-          let fear = $("#fear").html("<p>");
-          let disgust = $("#disgust").html("<p>");
-          let carefree = $("#carefree").html("<p>");
-          let happiness = $("#happiness").html("<p>");
-          let sadness = $("#sadness").html("<p>");
+          let question = $("#question");
+          let anger = $("#anger span");
+          let fear = $("#fear span");
+          let disgust = $("#disgust span");
+          let carefree = $("#carefree span");
+          let happiness = $("#happiness span");
+          let sadness = $("#sadness span");
 
           // get data from json
-          $(question).text(questions[i].Question);
-          $(anger).text(questions[i].Anger);
-          $(fear).text(questions[i].Fear);
-          $(disgust).text(questions[i].Disgust);
-          $(carefree).text(questions[i].Carefree);
-          $(happiness).text(questions[i].Happiness);
-          $(sadness).text(questions[i].Sadness);
+          $(question).text(theCurrentQuestion.Question);
+          $(anger).text(theCurrentQuestion.Anger);
+          $(fear).text(theCurrentQuestion.Fear);
+          $(disgust).text(theCurrentQuestion.Disgust);
+          $(carefree).text(theCurrentQuestion.Carefree);
+          $(happiness).text(theCurrentQuestion.Happiness);
+          $(sadness).text(theCurrentQuestion.Sadness);
 
-          // display the data in the html document
-          $(question).appendTo(questionChange);
-          $(anger).appendTo(questionChange);
-          $(fear).appendTo(questionChange);
-          $(disgust).appendTo(questionChange);
-          $(carefree).appendTo(questionChange);
-          $(happiness).appendTo(questionChange);
-          $(sadness).appendTo(questionChange);
-
-          $(info).append(questionChange);
-
-      } // for loop closing
       }//function
 });
 </script>
@@ -96,12 +65,12 @@ $(document).ready(function(){
 <div id="info-container">
 <div id="info">
 <h2 id="question">You posted a picture of yourself on your social media account. Minutes later, you recieve an insultive comment from a stranger who makes fun of your appearance. What is your reaction?</h2>
-<p class="options" id="anger"><input type="radio" name="anger" id="anger-chosen"> You reply back in an insultive way</input></p>
-<p class="options" id="fear"><input type="radio" name="fear" id="fear-chosen"> You delete the photo in fear that others may comment in the same manner and not like your photo</input></p>
-<p class="options" id="disgust"><input type="radio" name="disgust" id="disgust-chosen"> You feel disgusted that you don't wish to lower yourself to that person</input></p>
-<p class="options" id="carefree"><input type="radio" name="carefree" id="carefree-chosen"> You don't take the comment personally & care to reply</input></p>
-<p class="options" id="happiness"><input type="radio" name="happiness" id="happiness-chosen"> You laugh at the lack of creativity in the comment!</input></p>
-<p class="options" id="sadness"><input type="radio" name="sadness" id="sadness-chosen"> You feel sad and start to think that maybe the comment about your appearance is true</input></p>
+<p class="options" id="anger"><input type="radio" name="anger" id="anger-chosen"> <span>You reply back in an insultive way</span></input></p>
+<p class="options" id="fear"><input type="radio" name="fear" id="fear-chosen"> <span>You delete the photo in fear that others may comment in the same manner and not like your photo</span></input></p>
+<p class="options" id="disgust"><input type="radio" name="disgust" id="disgust-chosen"> <span>You feel disgusted that you don't wish to lower yourself to that person</span></input></p>
+<p class="options" id="carefree"><input type="radio" name="carefree" id="carefree-chosen"><span> You don't take the comment personally & care to reply</span></input></p>
+<p class="options" id="happiness"><input type="radio" name="happiness" id="happiness-chosen"> <span>You laugh at the lack of creativity in the comment!</span></input></p>
+<p class="options" id="sadness"><input type="radio" name="sadness" id="sadness-chosen"><span> You feel sad and start to think that maybe the comment about your appearance is true</span></input></p>
 <button id="next">NEXT</button>
 <section>
 
