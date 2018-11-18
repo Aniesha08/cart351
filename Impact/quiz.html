@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>ImpACT</title>
+<title>ImpACT - Quiz</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script src = "jquery/jquery-3.3.1.min.js"></script>
 <script>
@@ -15,7 +15,7 @@ $(document).ready(function(){
   quizIntro();
 
 function quizIntro(){
-$("#info-container").css("background-color", "#f7f7f7");
+$("#info-container").css("background-color", "#f9fafc");
   $("#start").click(function(event){
       console.log( "start button clicked" );
       beginQuiz();
@@ -23,7 +23,7 @@ $("#info-container").css("background-color", "#f7f7f7");
 } // quizIntro End
 
 function beginQuiz(){
-$("#info-container").css("background-color", "rgba(255,255,255,0.8)");
+$("#info-container").css("background-color", "rgba(249,250,250,0.8)");
 $("#startQuiz").hide();
 $("#info").show();
   let numberQuestion=0;
@@ -88,17 +88,17 @@ $("#info").show();
 </head>
 <body>
   <div class="menu">
-          <ul>
-            <li><img src="imgs/logo.jpg" width="150"/></li>
-            <li><a href="index.html">HOME //</a></li>
-            <li><a href="about.html">ABOUT //</a></li>
-            <li><a href="quiz.html">QUIZ //</a></li>
-            <li><a href="contact.html">CONTACT //</a></li>
-          </ul>
+    <ul>
+      <li><img src="imgs/logo.jpg" width="150"/></li>
+      <li><a id="home-link" href="index.html">HOME //</a></li>
+      <li><a id="about-link" href="about.html">ABOUT //</a></li>
+      <li><a id="quiz-link" href="quiz.html">QUIZ //</a></li>
+      <li><a id="contact-link" href="contact.html">CONTACT //</a></li>
+    </ul>
   </div>
 <div id="info-container">
 <div id="startQuiz">
-<h1>Take the Quiz!</h1>
+<h1 style="color: #88c441">TAKE THE QUIZ!</h1>
 <p><span class="numbers">1</span>Answer the following 10 questions as honestly as possible.<p>
 <p><span class="numbers">2</span>Think about your emotional reaction to the scenarios.</p>
 <p><span class="numbers">3</span>Observe the changes occuring to the background as you respond.</p>

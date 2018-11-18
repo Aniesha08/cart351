@@ -1,10 +1,13 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans|Oswald|Raleway');
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body{
-/*  position:relative;
-  padding-bottom: 8rem;*/
-  margin: 0;
+  margin: 0 0 250px;
 }
 
 /* Menu Styles */
@@ -34,6 +37,80 @@ body{
   margin-right: auto;
 }
 
+.menu ul li a#home-link:hover{
+  font-weight: bold;
+  color:#7b9ed5;
+}
+
+.menu ul li a#about-link:hover{
+  font-weight: bold;
+  color:#f35b71;
+}
+
+.menu ul li a#quiz-link:hover{
+  font-weight: bold;
+  color:#88c441;
+}
+
+.menu ul li a#contact-link:hover{
+  font-weight: bold;
+  color:#fa9e64;
+}
+
+/* Home Icons & buttons */
+
+.home-icons{
+  text-align:center;
+  padding-top: 2.25em;}
+
+.home-buttons{
+  width: 150px;
+}
+
+.home-buttons-center{
+  text-align: center;
+}
+
+.about-button{
+  background: #f35b71;
+}
+
+.about-button:hover{
+  background: #ffffff;
+  color: #f35b71;
+  border: 2px solid #f35b71;
+}
+
+.quiz-button{
+  background: #8bc34a;
+}
+
+.quiz-button:hover{
+  background: #ffffff;
+  color: #8bc34a;
+  border: 2px solid #8bc34a;
+}
+
+.contact-button{
+  background: #f89e6a;
+}
+
+.contact-button:hover{
+  background: #ffffff;
+  color: #f89e6a;
+  border: 2px solid #f89e6a;
+}
+
+/* Home Divs */
+
+#about-box, #quiz-box, #contact-box {
+height:480px;
+width:33.333333333%;
+float: left;
+display: block;}
+
+/* Contact Icons */
+
 ul#icons {margin-left:2em;}
 
 ul#icons li{
@@ -59,8 +136,9 @@ margin-right:5px;}
 
 div#info-container{
 width:60%;
-border: 1px solid lightgrey;
-border-radius: 5px;
+/*border: 1px solid lightgrey;*/
+background: #f9fafc;
+border-radius: 10px;
 margin: 0 auto;
 margin-top: 100px;
 margin-bottom: 100px;
@@ -72,6 +150,11 @@ margin: 0 auto;
 line-height: 24px;
 padding-top: 3em;
 padding-bottom: 3em;}
+
+div#about{
+  padding: 4.5em;
+  line-height:28px;
+}
 
 div#startQuiz{
 width:80%;
@@ -96,8 +179,7 @@ p.home-text{text-align: center;
 color:#444444;
 font-size:15px;
 margin-left:20px;
-margin-right:20px;
-margin-top:4em;}
+margin-right:20px;}
 
 .participation{text-align:center;
 padding-bottom: 3em;}
@@ -109,7 +191,7 @@ margin-left:3em;}
 font-weight: bold;
 margin-left:4.5em;}
 
-/* Buttons */
+/* Quiz Buttons */
 
 button{
   background:#d3d3d3;
@@ -128,53 +210,21 @@ button:hover{
   background:#8bc34a;
 }
 
-button#start:hover{
-  background:#444444;
-}
-
-button#start{
+button#start, button#takeQuiz{
   background:#8bc34a;
   width:100%;
 }
 
-.home-buttons{
-  width: 150px;
-  margin: 20px 110px 0px 110px;
+button#start:hover, button#takeQuiz:hover{
+  background:#ffffff;
+  color: #8bc34a;
+  border: 2px solid #8bc34a;
 }
-
-.about-button{
-  background: #f35b71;
-}
-
-.quiz-button{
-  background: #8bc34a;
-}
-
-.contact-button{
-  background: #f89e6a;
-}
-
-#about-box{height:250px;
-/*background-color:red;*/
-width:33.333333333%;
-float: left;
-display: block;}
-
-#quiz-box{height:250px;
-/*background-color:blue;*/
-width:33.333333333%;
-float: left;}
-
-#contact-box{height:250px;
-/*background-color:black;*/
-width:33.333333333%;
-float: left;
-display: block;}
 
 /* Footer */
 
 footer {background-color: #444444;
-/*position: absolute;*/
+position: absolute;
 left: 0;
 bottom: 0;
 right: 0;
