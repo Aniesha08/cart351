@@ -4,8 +4,13 @@
 <title>ImpACT - Quiz</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script src = "jquery/jquery-3.3.1.min.js"></script>
+<script  src="js/bubbles.js"></script>
 <script>
+let colorChosen;
+let questionAnwsered =false;
+let colors = ["#f15f73","#f7a37b","#feea73","#8bc249","#b295c6","#27aae1"];
 $(document).ready(function(){
+
   let section = $('section');
   let info = $('info');
   let infoContainer = $('info-container');
@@ -41,6 +46,7 @@ $("#info").show();
             if(numberQuestion<questions.length){
             changeQuestions(questions[numberQuestion]);
             numberQuestion++;
+            createBubbles();
           }
           else {
             $("#info").empty();
@@ -52,8 +58,7 @@ $("#info").show();
 
     // display the results
         function changeQuestions(theCurrentQuestion){
-        // our array of each book objects
-        console.log(theCurrentQuestion.Question)
+        //console.log(theCurrentQuestion.Question)
 
           let question = $("#question");
           let anger = $("#anger span");
@@ -82,6 +87,51 @@ $("#info").show();
         $(section).append(thankYouBox);
       } // end of thankYou
     } // end of beginQuiz
+
+
+function createBubbles(){
+    //$("#next").click(function(){
+      //console.log("next");
+            /*let anger = $("anger-chosen").val();
+            let fear = $("input[value='fear-chosen']:checked").val();
+            let disgust = $("input[value='disgust-chosen']:checked").val();
+            let carefree = $("input[value='carefree-chosen']:checked").val();
+            let happiness = $("input[value='happiness-chosen']:checked").val();
+            let sadness = $("input[value='sadness-chosen']:checked").val();
+            console.log(anger);
+          //  if(radioValue){
+          //      alert("Your are a - " + radioValue);
+          //  }*/
+
+          var val = getRadioVal();
+          // display value obtained
+          alert(val);
+          questionAnwsered=true;
+         //
+         if (val === "anger-chosen"){
+           colorChosen = colors[0];
+          }
+         if (val === "fear-chosen"){
+           colorChosen = colors[1];
+          }
+      //  });
+  }
+
+  function getRadioVal(){
+     var val;
+     // get list of radio buttons with specified name
+     var radios = //form.elements[name];
+     document.getElementsByTagName("input");
+     // loop through list of radio buttons
+     for (var i=0, len=radios.length; i<len; i++) {
+         if ( radios[i].checked ) { // radio checked?
+             val = radios[i].value; // if so, hold its value in val
+             break; // and break out of for loop
+         }
+     }
+     return val; // return value of checked radio or undefined if none checked
+  }
+
 }); // end of doc.ready function()
 
 </script>
@@ -96,6 +146,7 @@ $("#info").show();
       <li><a id="contact-link" href="contact.html">CONTACT //</a></li>
     </ul>
   </div>
+<div id="quiz-container">
 <div id="info-container">
 <div id="startQuiz">
 <h1 style="color: #88c441">TAKE THE QUIZ!</h1>
@@ -105,22 +156,26 @@ $("#info").show();
 <p><span class="numbers">4</span>Let's find out about your social media behavior!</p>
 <button id="start">LET'S START!</button>
 </div>
+
 <div id="info">
 <h2 id="question">You posted a picture of yourself on your social media account. Minutes later, you recieve an insultive comment from a stranger who makes fun of your appearance. What is your reaction?</h2>
-<p class="options" id="anger"><input type="radio" name="options" id="anger-chosen"> <span>You reply back in an insultive way</span></input></p>
-<p class="options" id="fear"><input type="radio" name="options" id="fear-chosen"> <span>You delete the photo in fear that others may comment in the same manner and not like your photo</span></input></p>
-<p class="options" id="disgust"><input type="radio" name="options" id="disgust-chosen"> <span>You feel disgusted that you don't wish to lower yourself to that person</span></input></p>
-<p class="options" id="carefree"><input type="radio" name="options" id="carefree-chosen"><span> You don't take the comment personally & care to reply</span></input></p>
-<p class="options" id="happiness"><input type="radio" name="options" id="happiness-chosen"> <span>You laugh at the lack of creativity in the comment!</span></input></p>
-<p class="options" id="sadness"><input type="radio" name="options" id="sadness-chosen"><span> You feel sad and start to think that maybe the comment about your appearance is true</span></input></p>
+<p class="options" id="anger"><input type="radio" name="options" value="anger-chosen"> <span>You reply back in an insultive way</span></input></p>
+<p class="options" id="fear"><input type="radio" name="options" value="fear-chosen"> <span>You delete the photo in fear that others may comment in the same manner and not like your photo</span></input></p>
+<p class="options" id="disgust"><input type="radio" name="options" value="disgust-chosen"> <span>You feel disgusted that you don't wish to lower yourself to that person</span></input></p>
+<p class="options" id="carefree"><input type="radio" name="options" value="carefree-chosen"><span> You don't take the comment personally & care to reply</span></input></p>
+<p class="options" id="happiness"><input type="radio" name="options" value="happiness-chosen"> <span>You laugh at the lack of creativity in the comment!</span></input></p>
+<p class="options" id="sadness"><input type="radio" name="options" value="sadness-chosen"><span> You feel sad and start to think that maybe the comment about your appearance is true</span></input></p>
 <button id="next">NEXT</button>
 </div>
+
 <section>
 </section>
 </div>
-
-<footer>
+</div> <!--end of quiz container -->
+<footer id= "quiz-footer">
     <p>CART351 ImpACT, 2018</p>
 </footer>
+<canvas id="c">
+</canvas>
 </body>
 </html>

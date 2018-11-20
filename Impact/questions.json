@@ -46,32 +46,32 @@
     "Sadness": "You get upset about being deceived."
   },
 
-  {"Question": "Question 7",
-    "Anger": "Option 1",
-    "Fear": "Option 2",
-    "Disgust": "Option 3",
-    "Carefree": "Option 4",
-    "Happiness": "Option 5",
-    "Sadness": "Option 6"
+  {"Question": "Your group has recently won an important prize in your field of study. Your partner has posted a picture regarding this on their social media page but did not give any credit to you. What is your reaction?",
+    "Anger": "You comment angrily on the post and mention that they did not credit you and then you report the post.",
+    "Fear": "You fear that your efforts will not be recognized since you weren’t mentioned in the post.",
+    "Disgust": "You feel disgusted that they left you out.",
+    "Carefree": "You do not care because you don’t mind your name not being mentioned.",
+    "Happiness": "You feel happy that you are not that kind of a person.",
+    "Sadness": "You feel sad for trusting your partner and that your name was not mentioned in the post."
   },
 
-  {"Question": "Question 8",
-    "Anger": "Option 1",
-    "Fear": "Option 2",
-    "Disgust": "Option 3",
-    "Carefree": "Option 4",
-    "Happiness": "Option 5",
-    "Sadness": "Option 6"
+  {"Question": "You get several message requests on your social media page from a stranger. It starts to become disturbing. What is your reaction?",
+    "Anger": "You do the same thing to the person who messaged you and continuously send messages to annoy them.",
+    "Fear": "You fear that this person may hack your information or do abuse your contacts as well.",
+    "Disgust": "You feel disgusted by this person’s behaviour.",
+    "Carefree": "You don’t care. You just block the person.",
+    "Happiness": "You feel happy that you have got someone’s attention. You always feel happy to talk to anyone who approaches you.",
+    "Sadness": "You feel sad that only strangers want to talk to you."
   },
 
 
-  {"Question": "Question 9",
-    "Anger": "Option 1",
-    "Fear": "Option 2",
-    "Disgust": "Option 3",
-    "Carefree": "Option 4",
-    "Happiness": "Option 5",
-    "Sadness": "Option 6"
+  {"Question": "You made friends with someone on social media and you meet them in person for the first time. Their character ended up being different from what you expected them to be and what they portrayed themselves to be. What is your reaction?",
+    "Anger": "You get angry that they have taken advantage of you.",
+    "Fear": "You fear that this person is not trustworthy.",
+    "Disgust": "You feel disgusted that this person was not true to you while you were true to them.",
+    "Carefree": "You don’t care because the fact that they were dishonest with you is not something for you to carry.",
+    "Happiness": "You feel happy that they have came out and shown their true colours.",
+    "Sadness": "You feel sad and disappointed that you were so naive."
   },
 
   {"Question": "Question 10",

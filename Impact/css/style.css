@@ -10,6 +10,13 @@ body{
   margin: 0 0 250px;
 }
 
+canvas {
+	  display: block;
+	  position: absolute;
+    top: 5;
+    z-index: 1;
+}
+
 /* Menu Styles */
 
 .menu {
@@ -127,6 +134,12 @@ margin-right:5px;}
 
 /* Containers */
 
+div#quiz-container{
+  width:100%;
+  position: absolute;
+  z-index: 5;
+}
+
 .numbers{
   background-color: #d3d3d3;
   color: #ffffff;
@@ -235,6 +248,11 @@ footer p{color: white;
 font-family: 'Open Sans', sans-serif;
 text-align: center;
 padding: 2em;}
+
+#quiz-footer{
+  position: absolute;
+  bottom: -20em;
+}
 
 /* Media Queries */
 
