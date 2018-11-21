@@ -35,7 +35,6 @@ Part.prototype.reset = function(){
   this.radius = this.startRadius;
   this.x = rand(0, c.width);
   this.y = rand(0, c.height);
-  //this.colors = ["#f15f73","#f7a37b","#feea73","#8bc249","#b295c6","#27aae1"];
   this.startAlpha = 0.8;
   this.alpha = this.startAlpha;
   this.decayRate = .3;
@@ -48,7 +47,7 @@ Part.prototype.reset = function(){
 
 Part.prototype.update = function(){
   this.alpha = this.startAlpha * (this.life / this.startLife);
-  if(this.radius>100 || this.radius<1 )
+  if(this.radius>75 || this.radius<1 )
   {
     this.growSpeed*=-1;
   }
@@ -65,8 +64,9 @@ Part.prototype.render = function(){
 };
 
 var createParts = function(){
+for (var i = 0; i < 5; i++){
   parts.push(new Part());
-    //var anger
+}
 };
 
 var updateParts = function(){
