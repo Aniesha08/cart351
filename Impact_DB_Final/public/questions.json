@@ -1,0 +1,87 @@
+{
+  "Questions":
+  [
+  {"Question": "You decided to take a 3 month break from social media. You log back into your account after 3 months and come across your ex's profile. He/she is now in a new relationship and has posted a picture of their new partner. What is your reaction?",
+  "Anger": "You feel angry that he/she has moved on",
+  "Fear": "You fear that you will never be able to move on like your partner",
+  "Disgust": "You feel disgusted that he/she does not regret losing you",
+  "Carefree": "You don't care, you continue scrolling through your feed",
+  "Happiness": "You feel happy for your ex",
+  "Sadness": "You feel sad that you no longer hold importance to their life"
+  },
+
+  {"Question": "You find out that someone has been using a fake account of you and has gained more followers than you. What is your reaction?",
+    "Anger": "You find out the identity of the creator of the fake account and make a fake account of the creator!",
+    "Fear": "You deactivate your Instagram account, as you fear someone else would do the same thing with your personal photos.",
+    "Disgust": "You feel disgusted to see that a person has used your identity in order to gain followers.",
+    "Carefree": "You do not care because you have accepted that social media, along with all its good features, also has some disadvantages.",
+    "Happiness": "You're glad that you have the report option and can eventually remove the account.",
+    "Sadness": "You feel sad that there is no way in which you can control this situation from happening again."
+  },
+
+  {"Question": "You are scrolling through you Facebook feed and you come across one of your Facebook friend’s post. They have posted a status sharing their happiness on their recent employment at a big company. It is the same company that you have been trying to get in for a long time. What is your reaction?",
+    "Anger": "You feel angry that she got the job because you feel that you’re the one who deserved to get it.",
+    "Fear": "You are afraid to congratulate your friend because you fear that he/she asks about your current career situation.",
+    "Disgust": "In your opinion, she is a selfish person who flaunts her happiness, and fortune.",
+    "Carefree": "You don't care much so you continue to scroll through your Facebook feed.",
+    "Happiness": "You congratulate your friend for their new job.",
+    "Sadness": "You feel embarrassed that you were not able to get in to the same posting."
+  },
+
+  {"Question": "A fan hater of your favourite artist has made fun of your favourite artist. What is your reaction?",
+    "Anger": "You feel angry and you feel that this person has no right to judge your favourite artist.",
+    "Fear": "You fear that others may have the same opinion and may affect his career.",
+    "Disgust": "You feel disgusted that they are putting your favourite artist down in order to bring popularity to their favourite artist.",
+    "Carefree": "You believe that everyone knows the artist is an expert in his field. So, the post does not matter to you.",
+    "Happiness": "You are feeling happy that these comments are coming from the competitor and not from your own supporters.",
+    "Sadness": "You are upset that someone has damaged the reputation of your favourite artist."
+  },
+
+  {"Question": "You bought a product from Instagram for the first time. The product size and colour is different from the one you had ordered and there is no option to return it. What is your reaction?",
+    "Anger": "You get mad and throw away the product.",
+    "Fear": "You lose your faith and will no more purchase online products.",
+    "Disgust": "You feel disgusted that the owner has false advertised the product.",
+    "Carefree": "You don’t take it seriously because it won’t affect it’s functionality.",
+    "Happiness": "You still feel happy that at least it's a useful product for someone you know.",
+    "Sadness": "You get upset about being deceived."
+  },
+
+  {"Question": "Your group has recently won an important prize in your field of study. Your partner has posted a picture regarding this on their social media page but did not give any credit to you. What is your reaction?",
+    "Anger": "You comment angrily on the post and mention that they did not credit you and then you report the post.",
+    "Fear": "You fear that your efforts will not be recognized since you weren’t mentioned in the post.",
+    "Disgust": "You feel disgusted that they left you out.",
+    "Carefree": "You do not care because you don’t mind your name not being mentioned.",
+    "Happiness": "You feel happy that you are not that kind of a person.",
+    "Sadness": "You feel sad for trusting your partner and that your name was not mentioned in the post."
+  },
+
+  {"Question": "You get several message requests on your social media page from a stranger. It starts to become disturbing. What is your reaction?",
+    "Anger": "You do the same thing to the person who messaged you and continuously send messages to annoy them.",
+    "Fear": "You fear that this person may hack your information or do abuse your contacts as well.",
+    "Disgust": "You feel disgusted by this person’s behaviour.",
+    "Carefree": "You don’t care. You just block the person.",
+    "Happiness": "You feel happy that you have got someone’s attention. You always feel happy to talk to anyone who approaches you.",
+    "Sadness": "You feel sad that only strangers want to talk to you."
+  },
+
+
+  {"Question": "You made friends with someone on social media and you meet them in person for the first time. Their character ended up being different from what you expected them to be and what they portrayed themselves to be. What is your reaction?",
+    "Anger": "You get angry that they have taken advantage of you.",
+    "Fear": "You fear that this person is not trustworthy.",
+    "Disgust": "You feel disgusted that this person was not true to you while you were true to them.",
+    "Carefree": "You don’t care because the fact that they were dishonest with you is not something for you to carry.",
+    "Happiness": "You feel happy that they have came out and shown their true colours.",
+    "Sadness": "You feel sad and disappointed that you were so naive."
+  },
+
+  {"Question": "One of the social media platforms that you have been using has gotten hacked and all images and info have been wiped out. There has been no solution to recover the account. What is your reaction?",
+    "Anger": "You feel angry that you have lost all your followers and images/data.",
+    "Fear": "You fear that the hacker may use the data for bad intentions.",
+    "Disgust": "You feel disgusted about the situation.",
+    "Carefree": "You don’t care because there is nothing you can do to prevent this situation from happening in the first place.",
+    "Happiness": "You don’t mind because you still have the change to recreate then even if it’s a matter of time.",
+    "Sadness": "You feel sad that you have lost all your followers and images/data."
+  }
+
+   ]
+  }
