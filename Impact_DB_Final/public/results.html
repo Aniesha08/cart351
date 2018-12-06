@@ -37,20 +37,25 @@ let resultColors = ["#f15f73", "#b295c6", "#8bc249", "#f7a37b", "#feea73", "#27a
 function showResults(dataFromDB){
   let ellipses =[];
   let showResults = $('#results');
-  $("#results").css("background-color", "black");
+//  $("#results").css("background-color", "black");
 
    for(let i = 0; i < dataFromDB.length; i++) {
    let currentObj = dataFromDB[i];
    for(property in currentObj){
-   let offsetX = Math.floor(Math.random()*(canvas.width-50)+30);
-   let offsetY = Math.floor(Math.random()*(canvas.height-50)+30);
+//   let offsetX = Math.floor(Math.random()*(canvas.width-50)+30);
+//   let offsetY = Math.floor(Math.random()*(canvas.height-50)+30);
+
+   let offsetX = Math.floor(Math.random()*(canvas.width-10)+5);
+   let offsetY = Math.floor(Math.random()*(canvas.height-10)+5);
+
   // console.log(currentObj[property]);
    // need to determine the color .... based on the data ...
    //placeholder::
    //let tempColor = "#ff0000";
    let colorChosen = determineColor(currentObj[property])
   // console.log(colorChosen);
-   ellipses.push(new resultsStar (i*offsetX, offsetY, 3, colorChosen));
+  // ellipses.push(new resultsStar (i*offsetX, offsetY, 3, colorChosen));
+   ellipses.push(new resultsStar (offsetX, offsetY, 1, colorChosen));
   }
 }
 
@@ -124,7 +129,7 @@ function resultsStar (x,y,r,c) {
     </ul>
   </div>
 
-<canvas id="results" style="width:100%; height:auto;">
+<canvas id="results" style="width:100%; height:auto; background-color: black;">
 </canvas>
 
 </body>
