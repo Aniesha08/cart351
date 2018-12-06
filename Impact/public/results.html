@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ImpACT - Results</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src = "jquery/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function(){
+let canvas = document.getElementById("results");
+let canvasContext= canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+let optionChosen;
+let resultColors = ["#f15f73", "#b295c6", "#8bc249", "#f7a37b", "#feea73", "#27aae1"];
+//let resultsColors = ["rgb (241, 95, 115)", "rgb (178, 149, 198)", "rgb (139, 194, 73)", "rgb (247, 163, 123)", "rgb (254, 234, 115)", "rgb (111, 172, 215)"];
+
+    $.ajax({
+           type: "POST",
+           enctype: 'multipart/form-data',
+           url: "RetrieveAnswers.php",
+           data: "",
+           processData: false,//prevents from converting into a query string
+           contentType: false,
+           cache: false,
+           timeout: 600000,
+           success: function (response) {
+           //reponse is a STRING (not a JavaScript object -> so we need to convert)
+           console.log(response);
+
+         //use the JSON .parse function to convert the JSON string into a Javascript object
+         let parsedJSON = JSON.parse(response);
+          console.log(parsedJSON);
+          showResults(parsedJSON);
+          },
+          error:function(){
+         console.log("error occurred");
+       }
+     });
+
+function showResults(dataFromDB){
+  let ellipses =[];
+
+//  $("#results").css("background-color", "black");
+
+   for(let i = 0; i < dataFromDB.length; i++) {
+   let currentObj = dataFromDB[i];
+   for(property in currentObj){
+     if(property.includes("Answer")){
+//   let offsetX = Math.floor(Math.random()*(canvas.width-50)+30);
+//   let offsetY = Math.floor(Math.random()*(canvas.height-50)+30);
+
+   let offsetX = Math.floor(Math.random()*(canvas.width-10)+5);
+   let offsetY = Math.floor(Math.random()*(canvas.height-10)+5);
+
+  console.log(currentObj);
+   // need to determine the color .... based on the data ...
+   //placeholder::
+   //let tempColor = "#ff0000";
+   let colorChosen = determineColor(currentObj[property])
+  // console.log(colorChosen);
+  // ellipses.push(new resultsStar (i*offsetX, offsetY, 3, colorChosen));
+  if( i === dataFromDB.length -1 )
+  {
+    ellipses.push(new resultsStar (offsetX, offsetY, 3, colorChosen,true));
+  }
+  else{
+   ellipses.push(new resultsStar (offsetX, offsetY, 3, colorChosen,false));
+  }
+  }
+}
+}
+ requestAnimationFrame(run);
+
+function run(){
+  canvasContext.clearRect(0,0,canvas.width,canvas.height);
+  for(let i =0; i< ellipses.length; i++){
+     ellipses[i].render();
+     ellipses[i].update();
+     //determineColor();
+     //console.log('circles showing');
+  }
+  requestAnimationFrame(run);
+}
+  function determineColor(e){
+  // If the answer is equal to a specific option, assign the color that goes with that option
+
+    if (e === "anger-chosen"){
+      optionChosen = resultColors[0];
+     }
+    if (e === "fear-chosen"){
+      optionChosen = resultColors[1];
+     }
+    if (e === "disgust-chosen"){
+      optionChosen = resultColors[2];
+     }
+    if (e === "carefree-chosen"){
+      optionChosen = resultColors[3];
+     }
+    if (e === "happiness-chosen"){
+      optionChosen = resultColors[4];
+     }
+    if (e === "sadness-chosen"){
+      optionChosen = resultColors[5];
+     }
+     return optionChosen;
+
+  }
+
+
+  //
+  //
+function resultsStar (x,y,r,c,canAnimate) {
+  rand = function(min, max){
+      return Math.floor( (Math.random() * (max - min + 1) ) + min);
+  };
+  this.xPos = x;
+  this.yPos = y;
+  this.radius = r;
+  this.startAniRadius = rand(1, 5);
+  this.Aniradius = this.startAniRadius;
+  this.growSpeed =1;
+  this.color = c;
+  this.canAnimate = canAnimate;
+
+  this.render =function(){
+     canvasContext.fillStyle = this.color;
+     canvasContext.beginPath();
+     canvasContext.arc(this.xPos,this.yPos,this.radius,0, Math.PI * 2, true);
+     canvasContext.fill(); // set the fill
+     canvasContext.closePath(); //close a path ...
+   }
+   this.update =function(){
+     if(this.canAnimate === true){
+       if(this.radius>8 || this.radius<1 )
+       {
+         this.growSpeed*=-1;
+       }
+       this.radius = this.radius+this.growSpeed;
+     }
+   }
+}
+
+}
+
+}); // end of window onload
+
+</script>
+
+</head>
+<body>
+  <div class="menu">
+    <ul>
+      <li><img src="imgs/logo.jpg" width="150"/></li>
+      <li><a id="home-link" href="index.html">HOME //</a></li>
+      <li><a id="about-link" href="about.html">ABOUT //</a></li>
+      <li><a id="quiz-link" href="quiz.html">QUIZ //</a></li>
+      <li><a id="contact-link" href="contact.html">CONTACT //</a></li>
+    </ul>
+  </div>
+
+<canvas id="results" style=" background-color: black;">
+</canvas>
+
+</body>
+</html>
